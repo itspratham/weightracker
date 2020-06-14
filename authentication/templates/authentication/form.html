@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    #nav #logIn {
+                    font-size: 1em;
+                    font-weight: 400;
+                    color: white;
+                    right: 0;
+                    top :  30px;
+                    background-color: #00ff00;
+                    margin: 20px;
+                    float: right;
+                    text-align: center;
+                    padding: 10px 40px;
+                    margin-top: -60px;
+                    margin-bottom: 60px;
+            }
+    </style>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel = "icon" href =
+    "/static/authentication/media/Annotation_2020-06-08_203534-removebg-preview.jpg"
+          type="image/jpg" sizes="16x16">
+    <head>
+    <img src="/static/authentication/media/Annotation_2020-06-08_203534-removebg-preview.jpg"
+         width =150  height=150 style="display: block;margin-left: auto;
+         margin-right: auto ;margin-top: 20px; margin-bottom:-60px;
+         width: 20%; height=35%; "></img></head>
+    <section id="nav">
+        <a id="logIn" href="/login/" style="line-height: 15px; font-size:18px">Login</a>
+    </section>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+<body>
+<div class="container-fluid" style="padding: 80px 550px">
+    <form action="{% url 'registerview' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="emailId">Email</label>
+            <input type="emailId" name="emailId" class="form-control" pattern=".+@.+" id="emailId"
+                   placeholder="Please enter your email id here" required>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1"
+                   name="exampleInputPassword1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                   placeholder="Password" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+        </div>
+        <form action="{% url 'base-page' %}" class="inline">
+            <button type= "submit" class="btn btn-primary">Submit</button>
+        </form>
+    </form>
+</div>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</script>
+</script>
+</body>
+</html>
